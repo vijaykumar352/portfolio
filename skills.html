@@ -142,6 +142,12 @@
       transform: scale(1.05);
     }
 
+    @media (max-width: 576px) {
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .proficiency-level {
       display: inline-block;
       padding: 5px 12px;
@@ -370,6 +376,8 @@
           <div class="expertise-badge">Communication</div>
           <div class="expertise-badge">Project Management</div>
           <div class="expertise-badge">Collaboration</div>
+        </div>
+        <div class="expertise-grid">
           <div class="expertise-badge">Adaptability</div>
           <div class="expertise-badge">Time Management</div>
           <div class="expertise-badge">Creative Thinking</div>

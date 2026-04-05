@@ -74,8 +74,13 @@
 
     .table-responsive {
       border-radius: 15px;
-      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       margin-bottom: 30px;
+    }
+
+    .table-responsive table {
+      min-width: 700px;
     }
 
     .course-tags {

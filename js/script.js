@@ -26,11 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   
-  // Close navbar when link is clicked (mobile)
+  // Close navbar when link is clicked (mobile), but not when opening dropdown toggles
   const navbarToggler = document.querySelector('.navbar-toggler');
   navLinks.forEach(link => {
     link.addEventListener('click', function () {
-      if (window.innerWidth < 992) {
+      const isDropdownToggle = link.classList.contains('dropdown-toggle') || link.dataset.bsToggle === 'dropdown';
+
+      if (window.innerWidth < 992 && !isDropdownToggle) {
         navbarToggler.click();
       }
     });
