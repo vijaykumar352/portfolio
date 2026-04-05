@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certifications - Professional Portfolio">
+  <title>Certifications - Personal Portfolio</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .certification-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 100%;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .cert-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .cert-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+
+    .cert-header h4 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+
+    .cert-body {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--light-color);
+    }
+
+    .cert-date {
+      color: #666;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cert-status {
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .cert-status.active {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+
+    .cert-status.expired {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+    }
+
+    .cert-description {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .cert-skills {
+      margin-bottom: 20px;
+    }
+
+    .cert-skills-label {
+      font-weight: 700;
+      color: var(--dark-color);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      background: var(--light-color);
+      color: var(--primary-color);
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .cert-footer {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .cert-footer .btn {
+      flex: 1;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      box-shadow: none;
+    }
+
+    .accordion-button:focus {
+      border-color: var(--primary-color);
+    }
+
+    .cert-filter-btn {
+      border: 2px solid #e0e0e0;
+      background: white;
+      color: var(--dark-color);
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 5px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cert-filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .cert-filter-btn:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .cert-filter-btn.active:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-user-circle"></i> Portfolio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="qualifications.html">Qualifications</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Expertise
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="skills.html">Skills</a></li>
+              <li><a class="dropdown-item" href="certifications.html">Certifications</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 60px 20px; text-align: center;">
+    <h1 class="display-4 fw-bold mb-3">Certifications</h1>
+    <p class="lead">Professional credentials and achievements</p>
+  </div>
+
+  <!-- Filter Section -->
+  <section class="py-5" style="background: #f5f6fa;">
+    <div class="container-fluid px-lg-5">
+      <h3 class="mb-4 text-center">Filter By Category</h3>
+      <div class="text-center">
+        <button class="cert-filter-btn active" data-filter="all">All</button>
+        <button class="cert-filter-btn" data-filter="web">Web Development</button>
+        <button class="cert-filter-btn" data-filter="cloud">Cloud & DevOps</button>
+        <button class="cert-filter-btn" data-filter="tools">Tools & Frameworks</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Grid -->
+  <section class="py-5">
+    <div class="container-fluid px-lg-5">
+      <div class="cert-grid">
+        <!-- Certification 1 -->
+        <div class="certification-card" data-category="learning">
+          <div class="cert-header">
+            <div class="cert-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h4>NPTL Online Course</h4>
+            <div class="cert-issuer">National Programme on Technology Enhanced Learning</div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-meta">
+              <div class="cert-date">
+                <i class="fas fa-calendar"></i> 2023 - 2024
+              </div>
+              <div class="cert-status active">Completed</div>
+            </div>
+            <p class="cert-description">
+              Online course on programming fundamentals and advanced computer science concepts through NPTL platform by IIT faculty. Comprehensive learning in data structures, algorithms, and practical programming.
+            </p>
+            <div class="cert-skills">
+              <div class="cert-skills-label">Topics Covered:</div>
+              <span class="skill-badge">Programming</span>
+              <span class="skill-badge">Data Structures</span>
+              <span class="skill-badge">Algorithms</span>
+              <span class="skill-badge">Problem Solving</span>
+            </div>
+            <div class="cert-footer">
+              <a href="#" class="btn btn-primary">
+                <i class="fas fa-external-link-alt"></i> View Course
+              </a>
+              <a href="#" class="btn btn-outline-primary">
+                <i class="fas fa-certificate"></i> Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Preview Modal -->
+  <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="certificateModalLabel">Certificate Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="" alt="Certificate" class="img-fluid rounded mb-3" id="certificateImage">
+          <p id="certificateName" class="text-muted"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <section class="py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+    <div class="container-fluid px-lg-5 text-center">
+      <h2 class="display-5 fw-bold mb-3">Get Started With Me</h2>
+      <p class="fs-5 mb-4">Let's work together on your next project</p>
+      <a href="contact.html" class="btn btn-light btn-lg">
+        <i class="fas fa-envelope"></i> Contact Me
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-fluid px-lg-5">
+      <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+          <h5>About</h5>
+          <p>A passionate developer dedicated to creating beautiful and functional web experiences.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Links</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Follow Me</h5>
+          <div class="footer-links">
+            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <p class="mb-0">&copy; 2024 Personal Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Certificate Filter Script -->
+  <script>
+    document.querySelectorAll('.cert-filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active state
+        document.querySelectorAll('.cert-filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter cards
+        document.querySelectorAll('.certification-card').forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

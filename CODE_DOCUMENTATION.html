@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Code Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .page {
+            page-break-after: always;
+            background: white;
+            padding: 40px;
+            margin-bottom: 20px;
+            min-height: 27cm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .section-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3436;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            padding-left: 10px;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            overflow-x: auto;
+            line-height: 1.4;
+            color: #212529;
+        }
+        
+        .code-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .description {
+            font-size: 12px;
+            color: #666;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        
+        .header-meta {
+            font-size: 11px;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                page-break-after: always;
+                box-shadow: none;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: HTML STRUCTURE -->
+<div class="page">
+    <h1 class="page-title">📄 PAGE 1: HTML STRUCTURE & NAVIGATION</h1>
+    
+    <div class="section-header">Navigation Bar HTML Structure</div>
+    <div class="code-block">
+        <div class="code-title">index.html - Navigation</div>
+        <pre>&lt;nav class="navbar navbar-expand-lg navbar-dark sticky-top"&gt;
+  &lt;div class="container-fluid px-lg-5"&gt;
+    &lt;a class="navbar-brand" href="index.html"&gt;
+      &lt;i class="fas fa-user-circle"&gt;&lt;/i&gt; Portfolio
+    &lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav ms-auto"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" href="index.html"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="about.html"&gt;About&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="qualifications.html"&gt;Qualifications&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item dropdown"&gt;
+          &lt;a class="nav-link dropdown-toggle" href="#" 
+             id="navbarDropdown" role="button" data-bs-toggle="dropdown"&gt;
+            Expertise
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="skills.html"&gt;Skills&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="certifications.html"&gt;Certifications&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="contact.html"&gt;Contact&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</pre>
+    </div>
+    
+    <div class="section-header">Hero Section</div>
+    <div class="code-block">
+        <div class="code-title">index.html - Hero Section</div>
+        <pre>&lt;section class="hero"&gt;
+  &lt;div class="hero-content"&gt;
+    &lt;h1 class="display-3 fw-bold mb-4"&gt;JADI VIJAY KUMAR&lt;/h1&gt;
+    &lt;p class="lead mb-5"&gt;Information Technology Student | Web Developer | Tech Enthusiast&lt;/p&gt;
+    &lt;div class="d-flex flex-wrap justify-content-center gap-3"&gt;
+      &lt;a href="about.html" class="btn btn-primary btn-lg"&gt;
+        &lt;i class="fas fa-arrow-right"&gt;&lt;/i&gt; Learn More
+      &lt;/a&gt;
+      &lt;a href="contact.html" class="btn btn-outline-light btn-lg"&gt;
+        &lt;i class="fas fa-envelope"&gt;&lt;/i&gt; Get In Touch
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="social-links mt-5"&gt;
+      &lt;a href="#" data-bs-toggle="tooltip" title="GitHub"&gt;
+        &lt;i class="fab fa-github"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+      &lt;a href="#" data-bs-toggle="tooltip" title="LinkedIn"&gt;
+        &lt;i class="fab fa-linkedin"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+      &lt;a href="#" data-bs-toggle="tooltip" title="Twitter"&gt;
+        &lt;i class="fab fa-twitter"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+    </div>
+    
+    <div class="description">
+        ✓ <span class="highlight">Bootstrap 5</span> framework for responsive layout<br>
+        ✓ Font Awesome icons for social links<br>
+        ✓ Sticky navigation with smooth scrolling<br>
+        ✓ Mobile-responsive hamburger menu
+    </div>
+</div>
+
+<!-- PAGE 2: CSS STYLING - VARIABLES & NAVBAR -->
+<div class="page">
+    <h1 class="page-title">🎨 PAGE 2: CSS - DESIGN SYSTEM & NAVBAR</h1>
+    
+    <div class="section-header">CSS Custom Properties (Design System)</div>
+    <div class="code-block">
+        <div class="code-title">style.css - Root Variables</div>
+        <pre>:root {
+  --primary-color: #667eea;          /* Purple Blue */
+  --secondary-color: #764ba2;        /* Deep Purple */
+  --accent-color: #f093fb;           /* Pink */
+  --dark-color: #2d3436;             /* Dark Gray */
+  --light-color: #f5f6fa;            /* Light Gray */
+  --success-color: #10b981;          /* Green */
+  --danger-color: #ef4444;           /* Red */
+  --warning-color: #f59e0b;          /* Yellow */
+}</pre>
+    </div>
+    
+    <div class="section-header">Navbar Styling</div>
+    <div class="code-block">
+        <div class="code-title">style.css - Navigation Bar</div>
+        <pre>.navbar {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white !important;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}</pre>
+    </div>
+    
+    <div class="section-header">Dropdown Menu</div>
+    <div class="code-block">
+        <div class="code-title">style.css - Dropdown Styling</div>
+        <pre>.dropdown-menu {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding-left: 2rem;
+}</pre>
+    </div>
+    
+    <div class="description">
+        ✓ Gradient-based color scheme<br>
+        ✓ Smooth hover effects with CSS transitions<br>
+        ✓ Underline animation for active nav links<br>
+        ✓ Consistent spacing and typography
+    </div>
+</div>
+
+<!-- PAGE 3: CSS STYLING - COMPONENTS -->
+<div class="page">
+    <h1 class="page-title">🎯 PAGE 3: CSS - HERO & CARD COMPONENTS</h1>
+    
+    <div class="section-header">Hero Section Styling</div>
+    <div class="code-block">
+        <div class="code-title">style.css - Hero Section</div>
+        <pre>.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,...');
+  opacity: 0.5;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease;
+}</pre>
+    </div>
+    
+    <div class="section-header">Card Components</div>
+    <div class="code-block">
+        <div class="code-title">style.css - Card Styling</div>
+        <pre>.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  font-weight: 600;
+}</pre>
+    </div>
+    
+    <div class="section-header">Button Styling</div>
+    <div class="code-block">
+        <div class="code-title">style.css - Button Styles</div>
+        <pre>.btn {
+  font-weight: 600;
+  padding: 12px 35px;
+  border-radius: 50px;
+  margin: 10px;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #ff77eb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4);
+}
+
+.btn-outline-light:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}</pre>
+    </div>
+    
+    <div class="description">
+        ✓ Parallax-like background patterns<br>
+        ✓ Lift effect on hover (transform: translateY)<br>
+        ✓ Box shadow depth for visual hierarchy<br>
+        ✓ Rounded buttons with gradient backgrounds
+    </div>
+</div>
+
+<!-- PAGE 4: JAVASCRIPT - NAVIGATION & DOM -->
+<div class="page">
+    <h1 class="page-title">⚙️ PAGE 4: JAVASCRIPT - NAVIGATION & DOM EVENTS</h1>
+    
+    <div class="section-header">Active Navigation Link Handler</div>
+    <div class="code-block">
+        <div class="code-title">script.js - Navigation Active State</div>
+        <pre>document.addEventListener('DOMContentLoaded', function () {
+  // Get the current page filename
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+  // Get all navigation links
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  // Remove active class from all links and add to current page link
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    
+    // Get href attribute
+    const href = link.getAttribute('href');
+    
+    // Check if link matches current page
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Close navbar when link is clicked (mobile)
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      if (window.innerWidth < 992px) {
+        navbarToggler.click();
+      }
+    });
+  });
+});</pre>
+    </div>
+    
+    <div class="section-header">Form Submission Handler</div>
+    <div class="code-block">
+        <div class="code-title">script.js - Form Validation</div>
+        <pre>// Get all forms with the needs-validation class
+const forms = document.querySelectorAll('.needs-validation');
+
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Validate the form
+    if (!validateForm(form)) {
+      event.preventDefault();
+      return false;
+    }
+
+    // If validation passes
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+    } else {
+      // Show success message
+      showAlert('success', 'Form submitted successfully! We will get back to you soon.');
+      form.reset();
+      form.classList.remove('was-validated');
+    }
+
+    form.classList.add('was-validated');
+  }, false);
+});</pre>
+    </div>
+    
+    <div class="description">
+        ✓ Event-driven architecture using addEventListener<br>
+        ✓ Dynamic active link highlighting<br>
+        ✓ Mobile responsive navbar collapse<br>
+        ✓ Form validation with preventDefault pattern
+    </div>
+</div>
+
+<!-- PAGE 5: JAVASCRIPT - VALIDATION & UTILITIES -->
+<div class="page">
+    <h1 class="page-title">🔒 PAGE 5: JAVASCRIPT - VALIDATION & UTILITIES</h1>
+    
+    <div class="section-header">Custom Form Validation Function</div>
+    <div class="code-block">
+        <div class="code-title">script.js - Validation Logic</div>
+        <pre>function validateForm(form) {
+  let isValid = true;
+  
+  // Get form fields
+  const fields = form.querySelectorAll('input, textarea, select');
+  
+  fields.forEach(field => {
+    // Remove previous error message
+    const errorMsg = field.parentElement.querySelector('.invalid-feedback');
+    if (errorMsg) {
+      errorMsg.remove();
+    }
+
+    // Check if field is empty
+    if (!field.value.trim()) {
+      showFieldError(field, 'This field is required.');
+      isValid = false;
+      return;
+    }
+
+    // Email validation
+    if (field.type === 'email') {
+      if (!isValidEmail(field.value)) {
+        showFieldError(field, 'Please enter a valid email address.');
+        isValid = false;
+      }
+    }
+
+    // Phone number validation (10 digits)
+    if (field.type === 'tel' || field.name === 'phone') {
+      const phoneValue = field.value.replace(/\D/g, '');
+      if (phoneValue.length !== 10) {
+        showFieldError(field, 'Phone number must be 10 digits.');
+        isValid = false;
+      }
+    }
+
+    // Message field minimum length
+    if (field.name === 'message' && field.value.trim().length < 10) {
+      showFieldError(field, 'Message must be at least 10 characters long.');
+      isValid = false;
+    }
+  });
+
+  return isValid;
+}</pre>
+    </div>
+    
+    <div class="section-header">Email Validation & Error Display</div>
+    <div class="code-block">
+        <div class="code-title">script.js - Helper Functions</div>
+        <pre>// Email validation using regex
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Show field error message
+function showFieldError(field, message) {
+  field.classList.add('is-invalid');
+  
+  const errorMsg = document.createElement('div');
+  errorMsg.className = 'invalid-feedback d-block';
+  errorMsg.textContent = message;
+  
+  field.parentNode.insertBefore(errorMsg, field.nextSibling);
+}
+
+// Display alert notifications
+function showAlert(type, message) {
+  let alertContainer = document.getElementById('alert-container');
+  
+  if (!alertContainer) {
+    alertContainer = document.createElement('div');
+    alertContainer.id = 'alert-container';
+    alertContainer.style.position = 'fixed';
+    alertContainer.style.top = '80px';
+    alertContainer.style.right = '20px';
+    alertContainer.style.zIndex = '9999';
+    alertContainer.style.maxWidth = '400px';
+    document.body.appendChild(alertContainer);
+  }
+
+  const alert = document.createElement('div');
+  alert.className = `alert alert-${type} alert-dismissible fade show`;
+  alert.role = 'alert';
+  alert.innerHTML = `${message}<button type="button" class="btn-close" data-bs-dismiss="alert">&lt;/button&gt;`;
+
+  alertContainer.appendChild(alert);
+
+  // Auto close after 5 seconds
+  setTimeout(() => { alert.remove(); }, 5000);
+}</pre>
+    </div>
+    
+    <div class="section-header">Key Features Summary</div>
+    <div class="description">
+        <strong>✓ Input Validation:</strong> Email regex, phone length check, text min-length<br>
+        <strong>✓ UI Feedback:</strong> Real-time error messages, auto-dismiss alerts<br>
+        <strong>✓ DOM Manipulation:</strong> Dynamic error element creation and insertion<br>
+        <strong>✓ User Experience:</strong> 5-second auto-close notifications, visual error states
+    </div>
+    
+    <div class="header-meta">
+        <strong>Portfolio Website Code Documentation</strong><br>
+        Generated: April 2, 2026<br>
+        Technology Stack: HTML5 • CSS3 • Bootstrap 5 • JavaScript (Vanilla) • Font Awesome Icons
+    </div>
+</div>
+
+</body>
+</html>

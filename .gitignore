@@ -1,0 +1,33 @@
+# Git ignore file for portfolio project
+
+# OS specific files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS backups
+*~
+*.bak
+*.backup

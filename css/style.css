@@ -1,0 +1,702 @@
+/* ==========================================
+   Personal Portfolio Website - Custom CSS
+   ========================================== */
+
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --dark-color: #2d3436;
+  --light-color: #f5f6fa;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+   General Styles
+   ========================================== */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================
+   Navbar Styles
+   ========================================== */
+
+.navbar {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white !important;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: white !important;
+  font-weight: 700;
+}
+
+.dropdown-menu {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding-left: 2rem;
+}
+
+/* ==========================================
+   Hero Section / Jumbotron
+   ========================================== */
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1000" height="1000" fill="url(%23grid)" /></svg>');
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hero .btn {
+  font-weight: 600;
+  padding: 12px 35px;
+  border-radius: 50px;
+  margin: 10px;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #ff77eb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4);
+}
+
+.btn-outline-light:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   Section Styles
+   ========================================== */
+
+section {
+  padding: 80px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 10px;
+}
+
+/* ==========================================
+   Cards
+   ========================================== */
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   Profile Section
+   ========================================== */
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  margin: 20px auto;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--light-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  margin: 0 8px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* ==========================================
+   Progress Bars
+   ========================================== */
+
+.progress {
+  height: 10px;
+  border-radius: 10px;
+  background: var(--light-color);
+  margin-bottom: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.progress-bar {
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  font-weight: 600;
+}
+
+.skill-item {
+  margin-bottom: 30px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-percentage {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ==========================================
+   Badges
+   ========================================== */
+
+.badge {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 5px;
+  display: inline-block;
+}
+
+.badge-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.badge-success {
+  background: var(--success-color);
+}
+
+.badge-warning {
+  background: var(--warning-color);
+}
+
+/* ==========================================
+   Tables
+   ========================================== */
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+}
+
+.table th {
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  border-color: #e0e0e0;
+}
+
+.table tbody tr:hover {
+  background: var(--light-color);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* ==========================================
+   Forms
+   ========================================== */
+
+.form-control,
+.form-select {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  color: var(--dark-color);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+.input-group-text {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-right: none;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.input-group .form-control:focus {
+  border-left: 2px solid var(--primary-color);
+}
+
+/* ==========================================
+   Alerts
+   ========================================== */
+
+.alert {
+  border: none;
+  border-radius: 10px;
+  border-left: 5px solid;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.alert-danger {
+  background: rgba(239, 68, 68, 0.1);
+  border-left-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.alert-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-left-color: var(--warning-color);
+  color: var(--warning-color);
+}
+
+/* ==========================================
+   Modal
+   ========================================== */
+
+.modal-content {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border: none;
+  padding: 25px;
+  border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* ==========================================
+   Accordion
+   ========================================== */
+
+.accordion-button {
+  background: white;
+  color: var(--dark-color);
+  font-weight: 600;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+.accordion-body {
+  background: var(--light-color);
+  border: 2px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+}
+
+/* ==========================================
+   Carousel
+   ========================================== */
+
+.carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-item {
+  height: 500px;
+  background: var(--light-color);
+}
+
+.carousel-caption {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
+  padding: 40px 20px 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background: rgba(102, 126, 234, 0.7);
+  padding: 20px;
+  border-radius: 50%;
+}
+
+/* ==========================================
+   Animations
+   ========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+
+footer {
+  background: linear-gradient(135deg, var(--dark-color) 0%, #1a202c 100%);
+  color: white;
+  padding: 40px 20px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+.footer-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 15px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 60px 15px;
+  }
+
+  .navbar {
+    padding: 1rem 1rem;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 80px 15px;
+    min-height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    margin: 5px;
+    width: 100%;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px;
+  }
+
+  .skill-item {
+    margin-bottom: 20px;
+  }
+}
+
+/* ==========================================
+   Utility Classes
+   ========================================== */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-custom {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.border-gradient {
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+}
+
+.rounded-custom {
+  border-radius: 15px;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}

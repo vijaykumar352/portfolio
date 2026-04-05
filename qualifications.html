@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Qualifications - Professional Portfolio">
+  <title>Qualifications - Personal Portfolio</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .education-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 5px solid var(--primary-color);
+    }
+
+    .education-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .education-card-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 20px;
+    }
+
+    .education-card-header h4 {
+      margin: 0 0 5px 0;
+      font-weight: 700;
+    }
+
+    .education-card-header p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .education-card-body {
+      padding: 20px;
+    }
+
+    .qualification-badge {
+      display: inline-block;
+      background: var(--light-color);
+      padding: 10px 15px;
+      border-radius: 20px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .gpa-badge {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .table-responsive {
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .course-tags {
+      margin-top: 15px;
+    }
+
+    .course-tag {
+      display: inline-block;
+      background: var(--light-color);
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      margin: 5px 5px 5px 0;
+      color: var(--primary-color);
+    }
+
+    .cert-badge {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Enhanced Table Striping */
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: rgba(102, 126, 234, 0.08);
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: white;
+    }
+
+    .table thead {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+
+    .table thead th {
+      border: none;
+      padding: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      vertical-align: middle;
+    }
+
+    .table tbody td {
+      padding: 15px;
+      vertical-align: middle;
+      border-color: #e0e0e0;
+    }
+
+    .table tbody tr:hover {
+      background-color: rgba(102, 126, 234, 0.15) !important;
+      transform: scale(1.01);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-user-circle"></i> Portfolio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="qualifications.html">Qualifications</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Expertise
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="skills.html">Skills</a></li>
+              <li><a class="dropdown-item" href="certifications.html">Certifications</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 60px 20px; text-align: center;">
+    <h1 class="display-4 fw-bold mb-3">Qualifications</h1>
+    <p class="lead">Education & Professional Experience</p>
+  </div>
+
+  <!-- Education Section -->
+  <section class="py-5">
+    <div class="container-fluid px-lg-5">
+      <h2 class="section-title">Education</h2>
+      
+      <!-- Education Table -->
+      <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th width="25%"><i class="fas fa-graduation-cap"></i> Qualification</th>
+              <th width="22%"><i class="fas fa-university"></i> Institution</th>
+              <th width="15%"><i class="fas fa-calendar"></i> Year</th>
+              <th width="12%"><i class="fas fa-trophy"></i> Grade</th>
+              <th width="26%"><i class="fas fa-info-circle"></i> Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>B.Tech Information Technology</strong>
+                <br>
+                <small class="text-muted">4 Years</small>
+              </td>
+              <td>
+                <strong>Vasavi College of Engineering</strong>
+                <br>
+                <small class="text-muted">Hyderabad</small>
+              </td>
+              <td>
+                <strong>2024 - 2028</strong>
+                <br>
+                <small class="text-muted">Ongoing</small>
+              </td>
+              <td>
+                <span class="gpa-badge">CGPA: 8.6/10</span>
+              </td>
+              <td>
+                <span class="badge bg-info text-dark" style="font-size: 0.9rem;"><i class="fas fa-person-hiking"></i> Pursuing</span>
+                <br>
+                <small class="text-muted mt-2">2nd Year Student</small>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Intermediate (12th)</strong>
+                <br>
+                <small class="text-muted">Science + Maths</small>
+              </td>
+              <td>
+                <strong> College of Excellence</strong>
+                <br>
+                <small class="text-muted">Hyderabad</small>
+              </td>
+              <td>
+                <strong>2022 - 2024</strong>
+                <br>
+                <small class="text-muted">2 Years</small>
+              </td>
+              <td>
+                <span class="gpa-badge">Score: 96%</span>
+              </td>
+              <td>
+                <span class="badge bg-success" style="font-size: 0.9rem;"><i class="fas fa-check-circle"></i> Completed</span>
+                <br>
+                <small class="text-muted mt-2">May 2024</small>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Secondary School (10th)</strong>
+                <br>
+                <small class="text-muted">State Board</small>
+              </td>
+              <td>
+                <strong>Santhosh Vidhya Nikethan</strong>
+                <br>
+                <small class="text-muted">Hyderabad</small>
+              </td>
+              <td>
+                <strong>2020 - 2022</strong>
+                <br>
+                <small class="text-muted">2 Years</small>
+              </td>
+              <td>
+                <span class="gpa-badge">CGPA: 10/10</span>
+              </td>
+              <td>
+                <span class="badge bg-success" style="font-size: 0.9rem;"><i class="fas fa-check-circle"></i> Completed</span>
+                <br>
+                <small class="text-muted mt-2">April 2022</small>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="py-5" style="background: #f5f6fa;">
+    <div class="container-fluid px-lg-5">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Company</th>
+              <th>Duration</th>
+              <th>Key Responsibilities</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Project Developer</strong>
+              </td>
+              <td>Vasavi College Lab</td>
+              <td>Academic Projects</td>
+              <td>
+                Built multiple projects in Java, Python, and Web Technologies
+              </td>
+              <td><span class="badge bg-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Coding Enthusiast</strong>
+              </td>
+              <td>Competitive Programming</td>
+              <td>2023 - Present</td>
+              <td>
+                Participated in hackathons and coding competitions
+              </td>
+              <td><span class="badge bg-success">Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+    <div class="container-fluid px-lg-5 text-center">
+      <h2 class="display-5 fw-bold mb-3">View My Skills & Certifications</h2>
+      <p class="fs-5 mb-4">Learn more about my technical expertise and professional certifications</p>
+      <a href="skills.html" class="btn btn-light btn-lg">
+        <i class="fas fa-chart-bar"></i> My Skills
+      </a>
+      <a href="certifications.html" class="btn btn-outline-light btn-lg ms-2">
+        <i class="fas fa-certificate"></i> Certifications
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-fluid px-lg-5">
+      <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+          <h5>About</h5>
+          <p>A passionate developer dedicated to creating beautiful and functional web experiences.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Links</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Follow Me</h5>
+          <div class="footer-links">
+            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <p class="mb-0">&copy; 2024 Personal Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
